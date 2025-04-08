@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://cior4a4qmibs6"]
+
+[ext_resource type="Script" uid="uid://bkg178nape7ci" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://dj0yfa30m5hi6" path="res://assets/Tiles/Backgrounds/Captura de tela 2025-04-08 174904.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://byil4sh48i44p" path="res://assets/Tiles/Characters/tile_0002.png" id="2_vjb58"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02679, 1.02776)
+script = ExtResource("1_con2f")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 67.0
+offset_bottom = 105.0
+scale = Vector2(1.26224, 1.44058)
+texture = ExtResource("1_yqeox")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="mochi" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_vjb58")
+expand_mode = 2
+flip_h = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
