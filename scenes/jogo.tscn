@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bqcql0bucauus"]
+[gd_scene load_steps=12 format=4 uid="uid://bqcql0bucauus"]
 
 [ext_resource type="PackedScene" uid="uid://6mdtibrilicr" path="res://scenes/player.tscn" id="1_7bb4d"]
 [ext_resource type="Texture2D" uid="uid://c1dcqdcd2mjuu" path="res://assets/Tilemap/tilemap.png" id="2_sq8yp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bnfft038du6d" path="res://assets/Tiles/Backgrounds/tile_0012.png" id="4_0c0ry"]
 [ext_resource type="Texture2D" uid="uid://dv1buh2u7hg8r" path="res://assets/Tiles/Backgrounds/tile_0014.png" id="5_4sjka"]
 [ext_resource type="PackedScene" uid="uid://bgshui1quptkt" path="res://scenes/coin.tscn" id="6_4sjka"]
+[ext_resource type="PackedScene" uid="uid://gghbju5632nq" path="res://scenes/gameoverzone.tscn" id="7_ogo8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1b3iq"]
 texture = ExtResource("2_sq8yp")
@@ -184,18 +185,18 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1b3iq")
 sources/1 = SubResource("TileSetAtlasSource_k05ng")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8i8hp"]
+
 [node name="Jogo" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_7bb4d")]
 position = Vector2(83, -30)
 
-[node name="Camera" type="Camera2D" parent="Player"]
-limit_left = -300
-editor_draw_limits = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(33, 20)
-zoom = Vector2(3, 3)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-50, 50)
+zoom = Vector2(2, 2)
+limit_bottom = 170
+position_smoothing_enabled = true
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
@@ -270,3 +271,9 @@ position = Vector2(85, 90)
 
 [node name="coin2" parent="Coins" instance=ExtResource("6_4sjka")]
 position = Vector2(253, 88)
+
+[node name="gameoverzone" parent="." instance=ExtResource("7_ogo8m")]
+position = Vector2(46, 152)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameoverzone"]
+shape = SubResource("WorldBoundaryShape2D_8i8hp")
