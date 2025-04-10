@@ -29,13 +29,12 @@ animations = [{
 radius = 6.0
 
 [node name="coin" type="Area2D"]
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pdq0q")
 autoplay = "default"
-frame_progress = 0.852121
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)

@@ -1,5 +1,6 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	print("+1 moeda!")
-	queue_free() # Replace with function body.
+	if body.has_method("adicionar_moeda"):
+		body.adicionar_moeda()
+		queue_free()

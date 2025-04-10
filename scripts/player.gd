@@ -21,5 +21,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	move_and_slide()
+	
+var moedas_coletadas: int = 0
+
+func adicionar_moeda(valor: int = 1):
+	moedas_coletadas += valor
+	print("moedas: %d" % moedas_coletadas)
+	
+	#var hud = get_tree().get_current_scene().get_node("HUD")
+	#hud.atualizar_moedas(moedas_coletadas)
+	
+	
+	
+	

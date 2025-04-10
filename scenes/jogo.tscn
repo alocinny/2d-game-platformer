@@ -189,15 +189,6 @@ sources/1 = SubResource("TileSetAtlasSource_k05ng")
 
 [node name="Jogo" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_7bb4d")]
-position = Vector2(83, -30)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-50, 50)
-zoom = Vector2(2, 2)
-limit_bottom = 170
-position_smoothing_enabled = true
-
 [node name="BG" type="ParallaxBackground" parent="."]
 
 [node name="05" type="ParallaxLayer" parent="BG"]
@@ -260,17 +251,26 @@ tile_set = SubResource("TileSet_k05ng")
 
 [node name="Coins" type="Node2D" parent="."]
 
-[node name="coin3" parent="Coins" instance=ExtResource("6_4sjka")]
-position = Vector2(428, 86)
+[node name="coin" parent="Coins" instance=ExtResource("6_4sjka")]
+position = Vector2(85, 90)
 
 [node name="coin4" parent="Coins" instance=ExtResource("6_4sjka")]
 position = Vector2(703, 90)
 
-[node name="coin" parent="Coins" instance=ExtResource("6_4sjka")]
-position = Vector2(85, 90)
+[node name="coin3" parent="Coins" instance=ExtResource("6_4sjka")]
+position = Vector2(428, 86)
 
 [node name="coin2" parent="Coins" instance=ExtResource("6_4sjka")]
 position = Vector2(253, 88)
+
+[node name="Player" parent="." instance=ExtResource("1_7bb4d")]
+position = Vector2(83, -30)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-50, 50)
+zoom = Vector2(2, 2)
+limit_bottom = 170
+position_smoothing_enabled = true
 
 [node name="gameoverzone" parent="." instance=ExtResource("7_ogo8m")]
 position = Vector2(46, 152)

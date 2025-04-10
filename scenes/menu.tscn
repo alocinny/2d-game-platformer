@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cior4a4qmibs6"]
+[gd_scene load_steps=4 format=3 uid="uid://3arvkhcj15ab"]
 
-[ext_resource type="Script" uid="uid://bkg178nape7ci" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://dj0yfa30m5hi6" path="res://assets/Tiles/Backgrounds/Captura de tela 2025-04-08 174904.png" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://byil4sh48i44p" path="res://assets/Tiles/Characters/tile_0002.png" id="2_vjb58"]
 
