@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
+@onready var hud = $"../hud/moeda"
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
-
+var moedas_coletadas: int = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,15 +24,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
 	
-var moedas_coletadas: int = 0
+
 
 func adicionar_moeda(valor: int = 1):
 	moedas_coletadas += valor
-	print("moedas: %d" % moedas_coletadas)
+	hud.text = "MOEDAS: %d" %moedas_coletadas
 	
 	#var hud = get_tree().get_current_scene().get_node("HUD")
 	#hud.atualizar_moedas(moedas_coletadas)
-	
+
+
 	
 	
 	
